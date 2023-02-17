@@ -1,6 +1,2 @@
-#include <stdio.h>
-#include <unistd.h>
-/**
- * main - A c programme that print a line to the standard error
- * Return 1
-
+#!/bin/bash
+gcc -S -masm=intel $CFILE
