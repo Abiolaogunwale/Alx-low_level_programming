@@ -19,7 +19,6 @@ int is_digit(char *s)
 		if (s[i] < '0' || s[i] > '9')
 			return (0);
 		i++; }
-
 	return (1);
 }
 
@@ -29,7 +28,6 @@ int is_digit(char *s)
  *
  * Return: the length of the string
  */
-
 int _strlen(char *s)
 {
 	int i = 0;
@@ -58,7 +56,6 @@ void errors(void)
  *
  * Return: always 0 (Success)
  */
-
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
@@ -67,7 +64,6 @@ int main(int argc, char *argv[])
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		errors();
-
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
