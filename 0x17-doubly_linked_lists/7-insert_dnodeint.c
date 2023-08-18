@@ -18,33 +18,26 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 
 	if (!head || (!current_node && idx != 0))
 		return (NULL);
-
-	/* Allocate memory for the new node. */
 	temp = malloc(sizeof(dlistint_t));
 	if (!temp)
 		return (NULL);
 	temp->n = n;
 	temp->next = NULL;
 	temp->prev = NULL;
-
-	/* Traverse to the desired index or the end. */
 	while (current_index != idx && current_node)
 	{
 		previous_node = current_node;
 		current_node = current_node->next;
 		current_index++;
 	}
-	/* Insert at the beginning if index is 0 and the list is empty.*/
 	if (!current_node && idx == 0)
 		*head = temp;
-	/* Insert at the beginning when previous_node is NULL. */
 	else if (!previous_node)
 	{
 		temp->next = current_node;
 		(*head)->prev = temp;
 		*head = temp;
 	}
-	/* Insert at the desired index. */
 	else if (current_index == idx)
 	{
 		previous_node->next = temp;
